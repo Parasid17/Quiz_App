@@ -68,22 +68,11 @@ let x;
 let points = 0;
 let exp_req = 50;
 let level = 1;
-let countDownTime = 10000; // 90 second
+let countDownTime = 91000; // 90 second
 let intervalId;
 
-let options = document.querySelectorAll(".container");
-console.log(options);
-options.forEach((option) => {
-    option.addEventListener("click", () => {
-        options.forEach((opt) => {
-            opt.classList.remove("selected");
-        });
-        option.classList.add("selected");
-        x = parseInt(option.dataset.value);
-        // console.log(typeof x);
-    });
-});
 
+let options = document.querySelectorAll(".container");
 let ques_num = document.getElementById("q_no");
 let total_ques = document.getElementById("total_ques");
 let percentage = document.getElementById("percent_js");
@@ -97,6 +86,17 @@ let submit = document.getElementById("submit");
 let html_points = document.getElementById("points");
 let curr_level = document.getElementById("curr_level");
 const countDown = document.querySelector('.countdown');
+
+
+options.forEach((option) => {
+    option.addEventListener("click", () => {
+        options.forEach((opt) => {
+            opt.classList.remove("selected");
+        });
+        option.classList.add("selected");
+        x = parseInt(option.dataset.value);
+    });
+});
 
 function handleChange() {
     ques_num.innerText = `${(i % n) + 1}`;
@@ -123,7 +123,6 @@ handleChange();
 
 function submitfun() {
     if (obj.options[x] == obj.ans) {
-        console.log(true);
         points += 10;
         if (points >= exp_req) {
             level++;
@@ -133,11 +132,6 @@ function submitfun() {
         }
         html_points.innerText = `${points}`;
     }
-    else {
-        console.log(false);
-    }
-    console.log(obj.options[x]);
-    console.log(obj.ans);
     i++;
     handleChange();
 
@@ -162,11 +156,10 @@ submit.addEventListener("click", () => {
 function timer(countDownTime) {
 
     intervalId = setInterval(() => {
-        console.log(countDownTime);
         countDownTime -= 1000;
 
         const secondsLeft = Math.round(countDownTime / 1000);
-        let seconds = secondsLeft % 60;
+        let seconds = secondsLeft;
 
 
         if (seconds < 10) {

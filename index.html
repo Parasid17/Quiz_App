@@ -4,51 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Application</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer ></script>
+    <title>Quiz Challenge - Test Your Knowledge</title>
+    <link rel="stylesheet" href="homepage.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
     </style>
 </head>
 
 <body>
-    <div id="main">
-        <div class="one">
-            <div id="Level" class="one_child">Level <span id="curr_level">1</span> </div>
-            <div id="pParent">
-                <div class="one_child" id="points">00</div>
-                <div class="one_child countdown">00 sec</div>
+    <div id="homepage">
+        <div class="hero-section">
+            <!-- Logo Section -->
+            <div class="logo">
+                <div class="quiz-icon">🧠</div>
+                <h1>Quiz Challenge</h1>
             </div>
-        </div>
 
-        <div class="two">
-            <div id="ques_no">Question <span id="q_no"></span> / <span id="total_ques"></span> </div>
-            <div id="percentage"> <span id="percent_js"></span>% Completed</div>
-        </div>
+            <div id="parent">
+                <!-- Welcome Card -->
+                <div class="welcome-card">
+                    <h2>Test Your Knowledge!</h2>
+                    <p>Challenge yourself with our interactive quiz and earn points for every correct answer.</p>
 
-        <div class="progress">
-            <!-- <input type="range" min="0" max="100" value="60" name="progress bar" id="progress_bar"> -->
-            <div id="progress_bg">
-                <div id="progress_color">
+                    <!-- Features Grid -->
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">⚡</span>
+                            <span>Multiple Levels</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🏆</span>
+                            <span>Earn Points</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">⏱️</span>
+                            <span>Timed Questions</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">📊</span>
+                            <span>Track Progress</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="quiz-info">
+                    <div class="info-card">
+                        <h3>How it Works</h3>
+                        <ul>
+                            <li>Answer multiple choice questions</li>
+                            <li>Earn points for correct answers</li>
+                            <li>Progress through different levels</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <!-- document.getElementById('progress_color').style.width = value + '%'; -->
-        </div>
 
-        <div id="quiz">
-            <div id="ques">Question : <span id="act_ques"></span></div>
-            <div>Your Options : </div>
-            <div class="main_options">
-                <div class="container op1" data-value="0"> <span class="circle">A</span> <span class="optwidth" id="act_opt1"> </span></div>
-                <div class="container op2" data-value="1"> <span class="circle">B</span> <span class="optwidth" id="act_opt2"> </span></div>
-                <div class="container op3" data-value="2"> <span class="circle">C</span> <span class="optwidth" id="act_opt3"> </span></div>
-                <div class="container op4" data-value="3"> <span class="circle">D</span> <span class="optwidth" id="act_opt4"> </span></div>
+            <!-- Start Button Section -->
+            <div class="start-section">
+                <button id="start-quiz" onclick="window.location.href='quiz.html'">
+                    Start Quiz Challenge 🚀
+                </button>
+                <p class="start-note">Ready to test your knowledge? Let's begin!</p>
             </div>
-        </div>
-
-        <div class="button">
-            <button id="submit">Submit & Earn Points 🚀</button>
         </div>
     </div>
 </body>
