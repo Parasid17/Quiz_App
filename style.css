@@ -1,0 +1,228 @@
+/* ---- main body ---- */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(to right bottom, #b379e4 10%, #ea468b, #ee4558);
+    font-family: "Share Tech Mono", monospace;
+    letter-spacing: 0px;
+}
+
+
+/* --- main Parent div --- */
+#main {
+    /* border: 1px solid black; */
+    height: 530px;
+    width: 800px;
+    padding: 30px;
+}
+
+
+/* --- Level --- */
+.one {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+
+/* --- Levels --- */
+.one_child {
+    /* border: 1px solid black; */
+    /* backdrop-filter: blur(10px); */
+    background: #ffffff30;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+#Level {
+    font-weight: 900;
+    letter-spacing: 0.8px;
+}
+
+
+/* --- Ques no & Percentage--- */
+.two {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    color: #fff;
+}
+
+
+/* --- Progress Bar --- */
+/* .progress { */
+    /* margin-top: 10px; */
+    /* border: 1px solid black; */
+    /* display: flex;
+    justify-content: center;
+    height: 7px;
+    margin-bottom: 25px;
+} */
+
+#progress_bg {
+    width: 100%;
+    height: 15px;
+    background-color: gray;
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#progress_color {
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(to right, #f8cd12 2%, #fa953a);
+    border-radius: 9px 0px 0px 9px;
+}
+
+/* #progress_bar {
+    width: 100%;
+    height: 20px;
+    margin: 0px 0px 20px 0px;
+    opacity: 1.7;
+    outline: none;
+    overflow: hidden;
+    appearance: none;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(to right, #f8cd12 5%, #fa953a);
+  border-radius: 10px 0 0 10px;
+} */
+
+/* --- Quiz --- */
+#quiz {
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+    background: #ffffffd2;
+}
+
+
+/* --- Questions --- */
+#ques {
+    font-weight: 500;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    font-size: 20px;
+    letter-spacing: -1px;
+}
+
+
+/* --- Options --- */
+.main_options {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    row-gap: 10px;
+    column-gap: 10px;
+    height: auto;
+}
+
+.container {
+    height: auto;
+    min-height: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.op1 {
+    border: 2px solid #f2b3b1;
+    background-color: #fee2e1;
+    transition: all 0.3s;
+}
+
+.op2 {
+    border: 2px solid #a3cbf4;
+    background-color: #dae9fe;
+    transition: all 0.3s;
+}
+
+.op3 {
+    border: 2px solid #9dedb8;
+    background-color: #dcfce7;
+    transition: all 0.3s;
+}
+
+.op4 {
+    border: 2px solid #d8b4fe;
+    background-color: #f3e8ff;
+    transition: all 0.3s;
+}
+
+.op1:hover,
+.op2:hover,
+.op3:hover,
+.op4:hover {
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+    transform: scale(1.03);
+}
+
+.selected {
+    border: 2px solid #a855f7;
+}
+
+.selected .circle {
+    background: #a855f7;
+}
+
+/* --- ABCD Options --- */
+.circle {
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    font-size: 17px;
+}
+
+.optwidth {
+    width: calc(100% - 40px);
+}
+
+/* --- Submit Button --- */
+.button {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#submit {
+    /* border: 1px solid black; */
+    border: none;
+    border-radius: 75px;
+    height: auto;
+    width: auto;
+    padding: 12px 40px;
+    margin-top: 10px 0px;  /* 15px */
+    background: linear-gradient(to right, #c23db4 5%, #df387f);
+    color: #fff;
+    font-weight: 550;
+    letter-spacing: 0.5px;
+}
