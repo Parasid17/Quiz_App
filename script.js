@@ -68,6 +68,8 @@ let x;
 let points = 0;
 let exp_req = 50;
 let level = 1;
+let countDownTime = 10000; // 90 second
+let intervalId;
 
 let options = document.querySelectorAll(".container");
 console.log(options);
@@ -94,6 +96,7 @@ let act_opt4 = document.getElementById("act_opt4");
 let submit = document.getElementById("submit");
 let html_points = document.getElementById("points");
 let curr_level = document.getElementById("curr_level");
+const countDown = document.querySelector('.countdown');
 
 function handleChange() {
     ques_num.innerText = `${(i % n) + 1}`;
@@ -117,11 +120,12 @@ function handleChange() {
 }
 handleChange();
 
-submit.addEventListener("click", () => {
+
+function submitfun() {
     if (obj.options[x] == obj.ans) {
         console.log(true);
         points += 10;
-        if (points >=  exp_req) {
+        if (points >= exp_req) {
             level++;
             points = Math.abs(points - exp_req);
             exp_req *= 2;
@@ -143,5 +147,39 @@ submit.addEventListener("click", () => {
     });
 
     x = -1;
+
+    clearInterval(intervalId);
+    timer(countDownTime);
+}
+
+submit.addEventListener("click", () => {
+    submitfun();
 });
 
+
+
+// -------------- timer 
+function timer(countDownTime) {
+
+    intervalId = setInterval(() => {
+        console.log(countDownTime);
+        countDownTime -= 1000;
+
+        const secondsLeft = Math.round(countDownTime / 1000);
+        let seconds = secondsLeft % 60;
+
+
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+        }
+        countDown.innerHTML = `${seconds} sec`;
+
+        if (countDownTime <= 0) {
+            clearInterval(intervalId);
+            submitfun();
+        }
+
+    }, 1000)
+
+}
+timer(countDownTime)

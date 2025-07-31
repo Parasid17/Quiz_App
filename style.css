@@ -47,6 +47,14 @@ body {
     letter-spacing: 0.8px;
 }
 
+#points {
+    margin-right: 10px;
+}
+
+#pParent {
+    display: flex;
+}
+
 
 /* --- Ques no & Percentage--- */
 .two {
